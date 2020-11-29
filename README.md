@@ -1,5 +1,5 @@
 # Why Zoltar
-Zoltar is a fortune teller machine, basically the machine one receiving a coin outputs a prediction of the readers future and being realistic, this tipically given by an automaton. We are a brothers team trying to predict Mexico's Logistic challenge for AB Inbev 2020 data cup. 
+Zoltar is a fortune teller machine, basically the machine once receiving a coin outputs a prediction of the readers future and being realistic, this tipically given by an automaton. We are a brothers team trying to predict Mexico's Logistic challenge for AB Inbev 2020 data cup. 
 
 ## The challenge
 We need to create 6 zones (based on the 6 days of the deliverable week) and make sure that the distance we travel is the minimum, without surpassing the distribution daily constraints and grant balanced stops and volumes.
@@ -13,6 +13,7 @@ We need to calculate the distance between all points, in other words we need to 
 
 ### Our strategy to win. 
 We will divide the work accordingly to our skills, because our team is conformed by a data analyst and a data scientist.
+![Solution](final_solution.png)
 
 ### Steps to the victory.
 First of all we will make an EDA for our raw data in R programming language, obtaining:
@@ -31,12 +32,10 @@ After finalizing this EDAs, we will apply three types of distances to our datase
 The first one is the Harvesine distance, in order to use this one we will transform our coordinates to radians.
 Sklearn defines this distance as follows: "The Haversine (or great circle) distance is the angular distance between two points on the surface of a sphere. The first distance of each point is assumed to be the latitude, the second is the longitude, given in radians."
 
-The second one is the euclidean distance, this one is the most used, the classic of distances metrics, the formula depends on the dimensions, in this case for two dimensions is given by:
-$$d(p,q) = \sqrt{(p-q)^{2}$$
+The second one is the euclidean distance, this one is the most used, the classic of distances metrics.
 It's also called the pythagorean distance because it obeys the following properties, symmetric, positive and follows the triange inequality.
 
-And the third one is the Manhattan distance also called the Taxicab geometry distance, The Manhattan distance as the sum of absolute differences, give two coordinates $(a, b)$, $(x, y)$, the Manhattan Distance is given by:
-$$Abs [a − x] + Abs [b − y]$$
+And the third one is the Manhattan distance also called the Taxicab geometry distance, The Manhattan distance as the sum of absolute differences, give two coordinates (a, b), (x, y), the Manhattan Distance is given by the sum of the difference of the absolute values entry-entry.
 
 After this steps we need to reshape this distances to a one dimension vector in order to get an analysis of this results, to get this we use the reshape method python provides.
 
@@ -48,7 +47,7 @@ Then we are going to plot the histograms for each distance and on the same plot 
 We will try to make clustering using K-means, sklearn says:
 "The KMeans algorithm clusters data by trying to separate samples in n groups of equal variance, minimizing a criterion known as the inertia or within-cluster sum-of-squares (see below). This algorithm requires the number of clusters to be specified. It scales well to large number of samples and has been used across a large range of application areas in many different fields.
 
-The k-means algorithm divides a set of $N$ samples $X$ into $K$ disjoint clusters $C$, each described by the mean $\mu_{j}$ of the samples in the cluster. The means are commonly called the cluster “centroids”; note that they are not, in general, points from $X$, although they live in the same space."
+The k-means algorithm divides a set of _N_ samples X into _K_ disjoint clusters _C_, each described by the mean $\mu_{j}$ of the samples in the cluster. The means are commonly called the cluster “centroids”; note that they are not, in general, points from _X_, although they live in the same space."
 
 Other will be the GMM (Gaussian Mixture Models), defined as follows: "A Gaussian mixture model is a probabilistic model that assumes all the data points are generated from a mixture of a finite number of Gaussian distributions with unknown parameters. One can think of mixture models as generalizing k-means clustering to incorporate information about the covariance structure of the data as well as the centers of the latent Gaussians." (sklearn) 
 
@@ -56,5 +55,11 @@ Finally also try DBSCAN which is a density based clustering algorithm, KD Nugget
 
 Density-Based Spatial Clustering of Applications with Noise (DBSCAN) is a base algorithm for density-based clustering. It can discover clusters of different shapes and sizes from a large amount of data, which is containing noise and outliers."
 
-### Why this algorithms? 
-Because we are trying to clustrize the zones of high frequency and find the nearest points.
+### Future steps:
+* DBSCAN algorithm approach did not work from our side, but we can get outliers (noise) from that model, then treating those observations different. 
+* It would be great to implement own version of KMeans where onece a zone has meet the balance constraints needs to be assigned to other cluster.
+
+### Files included:
+* EDA.html and Distances.html were used to display EDA outputs, we were thinking uploading them to a Flask server however got no time.
+* In order to generate the above htmls, use the Rdm and ipynb with same name.
+* Model can be found on contrained_kmeans.ipynb.
