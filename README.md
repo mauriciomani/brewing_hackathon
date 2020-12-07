@@ -62,4 +62,4 @@ Finally also try DBSCAN which is a density based clustering algorithm, KD Nugget
 
 
 # Why Zoltar
-Zoltar is a fortune teller machine, basically the machine once receiving a coin outputs a prediction of the readers future and being realistic, this tipically given by an automaton. We are a brothers team trying to predict Mexico's Logistic challenge for AB Inbev 2020 data cup. 
+Zoltar is a fortune teller machine, basically the machine once receiving a coin outputs a prediction of the readers future and being realistic, this tipically given by an automaton. We are a brothers team trying to predict Mexico's Logistic's challenge for AB Inbev 2020 data cup. With these optimizations we reach 4th place one week after the hackathon finished, around 7% below first place.
