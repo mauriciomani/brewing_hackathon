@@ -10,9 +10,6 @@ We need to calculate the distance between all points, in other words we need to 
 * Harvesine 
 * Euclidean (off course)
 
-
-### Our strategy to win. 
-We will divide the work accordingly to our skills, because our team is conformed by a data analyst and a data scientist.
 ![Solution](final_solution.png)
 
 ### Steps to the victory.
