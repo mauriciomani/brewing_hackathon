@@ -1,8 +1,5 @@
-# Why Zoltar
-Zoltar is a fortune teller machine, basically the machine once receiving a coin outputs a prediction of the readers future and being realistic, this tipically given by an automaton. We are a brothers team trying to predict Mexico's Logistic challenge for AB Inbev 2020 data cup. 
-
 ## The challenge
-We need to create 6 zones (based on the 6 days of the deliverable week) and make sure that the distance we travel is the minimum, without surpassing the distribution daily constraints and grant balanced stops and volumes.
+We need to **create 6 zones**, can be understand as **distribution centers** (based on the 6 days of the deliverable week) and make sure that the **distance we travel in each zone is the minimum**, without surpassing the **distribution daily constraints** such as **balanced stops** and **volumes**. In other words the zones should have the same amount of stores and same load in "trucks".
 
 ### Distance between points
 We need to calculate the distance between all points, in other words we need to create a distance matrix. So there are a wide variety of distance metrics we can use, as well as services to extract more precise distance, we will not limit to just one such as euclidean distance, but the following:
@@ -59,4 +56,10 @@ Finally also try DBSCAN which is a density based clustering algorithm, KD Nugget
 ### Files included:
 * EDA.html and Distances.html were used to display EDA outputs, we were thinking uploading them to a Flask server however got no time.
 * In order to generate the above htmls, use the Rdm and ipynb with same name.
-* Model can be found on contrained_kmeans.ipynb.
+* Solely balanced Kmeans model can be found on contrained_kmeans.ipynb for Constrained KMeans only.
+* Jupyter notebook for IP and MILP visualizations can be found under optimiztion_viz.ipynb
+* To implement iterations over MILP solved with cplex open cplex_optimization.py To run it please type on the terminal python cplex_optimization.
+
+
+# Why Zoltar
+Zoltar is a fortune teller machine, basically the machine once receiving a coin outputs a prediction of the readers future and being realistic, this tipically given by an automaton. We are a brothers team trying to predict Mexico's Logistic challenge for AB Inbev 2020 data cup. 
