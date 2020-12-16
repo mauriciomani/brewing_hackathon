@@ -7,7 +7,7 @@ We need to calculate the distance between all points, in other words we need to 
 * Harvesine 
 * Euclidean (off course)
 
-![Solution](final_solution.png)
+![Solution](images/final_solution.png)
 
 ### Steps to the victory.
 First of all we will make an EDA for our raw data in R programming language, obtaining:
@@ -54,12 +54,10 @@ Finally also try DBSCAN which is a density based clustering algorithm, KD Nugget
 * Better way of measuring distances on optimization problem, for example TSP or mean centroid-agencies.
 
 ### Files included:
-* EDA.html and Distances.html were used to display EDA outputs, we were thinking uploading them to a Flask server however got no time.
-* In order to generate the above htmls, use the Rdm and ipynb with same name.
-* Solely balanced Kmeans model can be found on contrained_kmeans.ipynb for Constrained KMeans only.
-* Jupyter notebook for IP and MILP visualizations can be found under optimiztion_viz.ipynb
-* To implement iterations over MILP solved with cplex open cplex_optimization.py To run it please type on the terminal python cplex_optimization.
-
+* Under the EDA path you will find EDA.html and Distances notebook, both were used to display EDA outputs, we were thinking uploading them to a Flask server however got no time. In order to generate EDA html file kindly use Rdm file.
+* Under the solution path you will find everything needed to solve the problem using balanced kmeans, IP and MILP. Solely balanced Kmeans model can be found on contrained_kmeans.ipynb for Constrained KMeans only. Jupyter notebook for IP and MILP visualizations can be found under optimiztion_viz.ipynb. To implement iterations over MILP solved with cplex open cplex_optimization.py To run it please type on the terminal python cplex_optimization.
+* test.py: To test how good is a particular solution according to distance minimization and stops plus distribution balance constraint.
+* utils.py: Includes information for different distance metrics. 
 
 # Why Zoltar
 Zoltar is a fortune teller machine, basically the machine once receiving a coin outputs a prediction of the readers future and being realistic, this tipically given by an automaton. We are a brothers team trying to predict Mexico's Logistic's challenge for AB Inbev 2020 data cup. With these optimizations we reach 4th place one week after the hackathon finished, around 7% below first place.
