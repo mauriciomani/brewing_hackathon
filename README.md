@@ -53,6 +53,11 @@ Finally also try DBSCAN which is a density based clustering algorithm, KD Nugget
 * It would be great to implement own version of KMeans where once a zone has met the balance constraints needs to be assigned to other cluster.
 * Better way of measuring distances on optimization problem, for example TSP or mean centroid-agencies.
 
+![map uber h3](images/h3_map.png)
+
+### H3
+You can find a Uber h3 library implementation. Might not be very useful for the goals of the hackathon but might be great to analyze dense zones on large datasets and probably treat outliers. As a recap, there are a lot of possibilities and research zones, however, I have not work further on this (at least for now).
+
 ### Files included:
 * Under the EDA path you will find EDA.html and Distances notebook, both were used to display EDA outputs, we were thinking uploading them to a Flask server however got no time. In order to generate EDA html file kindly use Rdm file.
 * Under the solution path you will find everything needed to solve the problem using balanced kmeans, IP and MILP. Solely balanced Kmeans model can be found on contrained_kmeans.ipynb for Constrained KMeans only. Jupyter notebook for IP and MILP visualizations can be found under optimiztion_viz.ipynb. To implement iterations over MILP solved with cplex open cplex_optimization.py To run it please type on the terminal python cplex_optimization.
